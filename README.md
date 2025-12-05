@@ -99,32 +99,46 @@ graph TB
 
 ## Installation
 
-### Option 1: Install from source (recommended)
+The CLI can be installed globally or in a virtual environment. It needs to be run from your bot's directory containing the `logs/` folder.
+
+### Option 1: Global installation (recommended for single bot monitoring)
 
 ```bash
-# Clone or download the package
+# Clone or download the notarb-cli package
 cd notarb-cli
 
-# Install dependencies
-pip install rich psutil
-
-# Install the package in development mode
+# Install dependencies and package globally
+pip install rich psutil python-dotenv
 pip install -e .
 ```
 
-### Option 2: Using conda (on Arch Linux)
+### Option 2: Using conda environment (on Arch Linux)
 
 ```bash
 # Create and activate conda environment
 conda create -n notarb-cli python=3.10
 conda activate notarb-cli
 
-# Install dependencies
-conda install rich psutil
-
-# Install the package
+# Install dependencies and package
+conda install rich psutil python-dotenv
 pip install -e .
 ```
+
+### Option 3: Per-project installation
+
+If you prefer to keep the CLI isolated per bot:
+
+```bash
+# In your bot directory
+cd your-bot-directory
+
+# Clone CLI as subdirectory (or install via pip)
+git clone https://github.com/yourusername/notarb-cli.git cli
+cd cli
+pip install -e .
+```
+
+**Important**: After installation, run `notarb-cli` from your bot's root directory (where `logs/` folder is located).
 
 ## Usage
 

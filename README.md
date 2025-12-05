@@ -6,6 +6,63 @@
 
 A terminal-based monitoring dashboard for NotArb MEV bots. Displays real-time profit tracking, fees analysis, and log monitoring.
 
+## Architecture
+
+```mermaid
+graph TB
+    A[notarb-cli] --> B[DashboardUI]
+    B --> C[ProfitTracker]
+    B --> D[LogMonitor]
+
+    C --> E[logs/notarb.log]
+    C --> F[logs/profits.json]
+
+    D --> G[logs/notarb.log]
+    D --> H[logs/jupiter.log]
+
+    I[.env file] --> J[Environment Variables]
+    J --> C
+    J --> D
+
+    K[Terminal Input] --> B
+    B --> L[Rich Terminal Output]
+
+    subgraph "Data Flow"
+        E --> C
+        G --> D
+        C --> F
+    end
+
+    subgraph "Configuration"
+        I
+        J
+    end
+
+    subgraph "External Dependencies"
+        M[Running NotArb Bot]
+        N[Log Files]
+    end
+
+    M -.-> E
+    M -.-> G
+    N -.-> E
+    N -.-> G
+```
+
+### Components
+
+- **DashboardUI**: Main interface handling user input and display rendering
+- **ProfitTracker**: Parses log files for profit data, calculates fees and statistics
+- **LogMonitor**: Tails and formats log files for real-time display
+- **Environment**: Loads configuration from .env files
+
+### Data Flow
+
+1. CLI loads environment variables from .env
+2. LogMonitor tails log files in real-time
+3. ProfitTracker parses profit entries and updates statistics
+4. DashboardUI renders all data in interactive terminal interface
+
 ![Screenshot](notarb-cli.png)
 
 ## Features

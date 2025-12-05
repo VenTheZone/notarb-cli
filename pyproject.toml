@@ -21,6 +21,7 @@ dependencies = [
 
 [project.urls]
 Homepage = "https://github.com/yourusername/notarb-cli"
+Repository = "https://github.com/yourusername/notarb-cli.git"
 
 [project.scripts]
 notarb-cli = "notarb_cli:main"

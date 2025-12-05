@@ -6,7 +6,7 @@
 
 A terminal-based monitoring dashboard for NotArb MEV bots. Displays real-time profit tracking, fees analysis, and log monitoring.
 
-![Screenshot](screenshot.png)
+![Screenshot](notarb-cli.png)
 
 ## Features
 

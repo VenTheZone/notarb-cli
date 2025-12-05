@@ -6,6 +6,11 @@ Real-time monitoring and control center for the terminal.
 import sys
 import signal
 from rich.console import Console
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
+
 from manager.dashboard_ui import DashboardUI
 from manager.profit_tracker import ProfitTracker
 from manager.log_monitor import LogMonitor

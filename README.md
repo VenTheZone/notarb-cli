@@ -67,9 +67,27 @@ pip install -e .
 
 ## Configuration
 
+### Environment Variables
+
+The CLI uses environment variables for configuration. Copy `examples/.env` to your project root as `.env` and modify the values:
+
+```bash
+cp examples/.env .env
+```
+
+Edit `.env` to set your RPC URL and other variables:
+```
+DEFAULT_RPC_URL=https://your-rpc-endpoint.com
+```
+
+The CLI automatically loads `.env` files using python-dotenv.
+
+### Directory Structure
+
 The CLI expects the following directory structure:
 ```
 your-bot-directory/
+├── .env                    # Environment variables
 ├── logs/
 │   ├── notarb.log      # Bot log file
 │   ├── jupiter.log     # Jupiter server log file
@@ -99,6 +117,7 @@ Arbitrage executed. Net: 0.005 SOL
 
 - `rich` - Terminal UI library
 - `psutil` - System and process monitoring
+- `python-dotenv` - Environment variable loading
 
 ## License
 

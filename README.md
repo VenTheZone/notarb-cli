@@ -6,6 +6,24 @@
 
 A terminal-based monitoring dashboard for NotArb MEV bots. Displays real-time profit tracking, fees analysis, and log monitoring.
 
+## Technology Stack
+
+This CLI is built with modern Python technologies:
+
+- **Python 3.8+** - Core language with type hints and modern features
+- **Rich** - Beautiful terminal UI with colors, tables, and interactive elements
+- **Psutil** - Cross-platform system and process monitoring
+- **Python-dotenv** - Environment variable management from .env files
+- **Setuptools** - Modern Python packaging with pyproject.toml
+
+### Key Features
+
+- **Real-time log monitoring** using `tail` command and file watching
+- **Rich terminal interface** with keyboard navigation and live updates
+- **Thread-safe profit tracking** with file locking for multi-process safety
+- **Environment-based configuration** for flexible deployment
+- **Cross-platform compatibility** (Linux, macOS, Windows)
+
 ## Architecture
 
 ```mermaid
